@@ -24,3 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/uploadfile','UploadFileController@index');
 Route::post('/uploadfile','UploadFileController@showUploadFile');
+
+
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);

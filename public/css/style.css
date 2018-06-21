@@ -2372,7 +2372,7 @@ body {
 }
 
 .parallax-inner {
-    padding: 150px 0;
+    padding: 250px 0;
     background-image: url("../img/demo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;

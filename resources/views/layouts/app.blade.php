@@ -56,29 +56,46 @@
 
                     <!--logo start-->
                     <a href="{{ url('/') }}" class="logo-brand">
-                        <img class="retina" src="{{ asset('img/logo.png') }}" alt="Massive">
+                        <img class="retina" src="{{ asset('img/logo-main3.png') }}" alt="Massive">
                     </a>
                     <!--logo end-->
 
                     <ul class="menuzord-menu menuzord-right c-nav_s-standard">
-                        <li class="active"><a href="#">Ana Sayfa</a></li>
+                        <li class="active"><a href="#">@lang('app-layout.home')</a></li>
 
-                        <li class=""><a href="javascript:void(0)">Ürün Kategorileri</a>
+                        <li class=""><a href="javascript:void(0)">@lang('app-layout.categories')</a>
                             <ul class="dropdown">
-                                <li><a href="javascript:void(0)">Küpe</a>
+                                <li><a href="javascript:void(0)">@lang('app-layout.necklace')</a>
                                 </li>
-                                <li><a href="javascript:void(0)">Bilezik</a>
+                                <li><a href="javascript:void(0)">@lang('app-layout.earring')</a>
                                 </li>
-                                <li><a href="javascript:void(0)">General 3</a>
+                                <li><a href="javascript:void(0)">@lang('app-layout.ring')</a>
                                 </li>
-                                <li><a href="javascript:void(0)">General 4</a>
+                                <li><a href="javascript:void(0)">@lang('app-layout.bracelet')</a>
+                                </li>
+                                <li><a href="javascript:void(0)">@lang('app-layout.others')</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class=""><a href="#">Hakkımızda</a></li>
+                        <li class=""><a href="#">@lang('app-layout.about')</a></li>
 
-                        <li class=""><a href="#">İletişim</a></li>
+                        <li class=""><a href="#">@lang('app-layout.contact')</a></li>
+
+                        <li class="">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                {{ Config::get('languages')[App::getLocale()] }}
+                            </a>
+                            <ul class="dropdown">
+                                @foreach (Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                        <li>
+                                            <a href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </li>
 
                         @guest
                         @else
@@ -121,17 +138,17 @@
 
         <div class="f-logo-center">
             <a href="javascript:void(0)" class="footer-logo">
-                <img class="retina" src="{{ asset('img/footer-logo.png') }}" alt="">
+                <img class="retina" src="{{ asset('img/logo-main1.png') }}" width="100px" height="50px" alt="">
             </a>
         </div>
         <!--<div class="sub-title">THE ULTIMATE THEME WITH MASSIVE COLLECTION</div>-->
 
         <div class="col-md-6">
             <div class="copyright">
-                © MASSIVE 2014.
+                © AlperHediyelik 2018.
             </div>
             <div class="copyright-sub-title text-uppercase">
-                Building your site with lots of fun
+                @lang('app-layout.reserved')
             </div>
         </div>
         <div class="col-md-6">

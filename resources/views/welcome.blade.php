@@ -103,8 +103,8 @@
 
                     <!--title-->
                     <div class="heading-title border-short-bottom text-center">
-                        <h3 class="text-uppercase">Recent product</h3>
-                        <div class="half-txt">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit</div>
+                        <h3 class="text-uppercase">@lang('welcome.recent')</h3>
+                        <div class="half-txt">@lang('welcome.recent_sub')</div>
                     </div>
                     <!--title-->
 
@@ -213,18 +213,18 @@
         <!--portfolio-->
 
         <!--parallax-->
-        <div class="parallax-inner " style="background-image: url({{ asset('img/decor/para1.jpg') }})">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="heading-title-alt text-left m-bot-0 inline-block">
-                            <h1 class="text-uppercase txt-extra-xl light-txt l-weight">30% Discount</h1>
-                            <h3 class="text-uppercase light-txt">for this summer only</h3>
-                            <a href="#" class="btn btn-medium  btn-light-solid m-top-30"> shop now </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="parallax-inner " style="background-image: url({{ asset('img/copper-workshop.png') }})">
+            {{--<div class="container">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<div class="heading-title-alt text-left m-bot-0 inline-block">--}}
+                            {{--<h1 class="text-uppercase txt-extra-xl light-txt l-weight">30% Discount</h1>--}}
+                            {{--<h3 class="text-uppercase light-txt">for this summer only</h3>--}}
+                            {{--<a href="#" class="btn btn-medium  btn-light-solid m-top-30"> shop now </a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
         <!--parallax-->
 
