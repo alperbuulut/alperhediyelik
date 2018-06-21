@@ -65,9 +65,9 @@
 
                         <li class=""><a href="javascript:void(0)">Ürün Kategorileri</a>
                             <ul class="dropdown">
-                                <li><a href="javascript:void(0)">General 1</a>
+                                <li><a href="javascript:void(0)">Küpe</a>
                                 </li>
-                                <li><a href="javascript:void(0)">General 2</a>
+                                <li><a href="javascript:void(0)">Bilezik</a>
                                 </li>
                                 <li><a href="javascript:void(0)">General 3</a>
                                 </li>
