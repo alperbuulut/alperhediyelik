@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'en' => 'English',
-	'tr' => 'Türkçe',
+    'tr' => 'Türkçe',
+    'en' => 'English',
 	'ar' => 'العربية'
 ];
