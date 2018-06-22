@@ -10,7 +10,7 @@
     <!--favicon icon-->
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.ico') }}">
 
-    <title>Decor</title>
+    <title>Alper Hediyelik</title>
 
     <!--common style-->
     <link href='http://fonts.googleapis.com/css?family=Abel|Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic,900,900italic,200italic,200' rel='stylesheet' type='text/css'>
@@ -65,16 +65,9 @@
 
                         <li class=""><a href="javascript:void(0)">@lang('app-layout.categories')</a>
                             <ul class="dropdown">
-                                <li><a href="javascript:void(0)">@lang('app-layout.necklace')</a>
-                                </li>
-                                <li><a href="javascript:void(0)">@lang('app-layout.earring')</a>
-                                </li>
-                                <li><a href="javascript:void(0)">@lang('app-layout.ring')</a>
-                                </li>
-                                <li><a href="javascript:void(0)">@lang('app-layout.bracelet')</a>
-                                </li>
-                                <li><a href="javascript:void(0)">@lang('app-layout.others')</a>
-                                </li>
+                                @foreach($categories as $category)
+                                    <li><a href="{{ route('category', $category->slug) }}">{{ ${'category'}->{Config::get('app.locale')}  }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
 

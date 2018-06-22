@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Session;
@@ -16,9 +17,9 @@ class PostController extends Controller
     public function index()
     {
 
-    	$posts = Post::all();
+    	$categories = Category::where('status', 'A')->get();
 
-    	return view('welcome')->with('posts', $posts);
+    	return view('welcome')->with('categories', $categories);
 
     }
 

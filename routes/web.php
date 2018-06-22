@@ -27,3 +27,10 @@ Route::post('/uploadfile','UploadFileController@showUploadFile');
 
 
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+
+//
+Route::get('/category/{slug}','CategoryController@index')->name('category');
+
+
+Route::group(['middleware' => 'auth'], function () {
+});

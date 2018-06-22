@@ -63,31 +63,31 @@
                     <div class="col-md-6">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat1.jpg') }}" alt="" />
-                            <span class="title dark">outdoor<br/> lighting</span>
+                            <span class="title dark">@lang('app-layout.necklace')</span>
                         </a>
                     </div>
                     <div class="col-md-6">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat2.jpg') }}" alt="" />
-                            <span class="title light">wooden<br/> flooring</span>
+                            <span class="title light">@lang('app-layout.earring')</span>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat3.jpg') }}" alt="" />
-                            <span class="title dark">living<br/> area</span>
+                            <span class="title dark">@lang('app-layout.ring')</span>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat4.jpg') }}" alt="" />
-                            <span class="title light">bathroom<br/> fittings</span>
+                            <span class="title light">@lang('app-layout.bracelet')</span>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat5.jpg') }}" alt="" />
-                            <span class="title dark">tools &<br/> equipment</span>
+                            <span class="title dark">@lang('app-layout.others')</span>
                         </a>
                     </div>
                 </div>

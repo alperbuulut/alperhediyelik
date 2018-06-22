@@ -31,7 +31,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="{{ url('/') }}"><img src="{{ asset('img/admin-logo.png') }}" alt="Klorofil Logo" class="img-responsive logo"></a>
+            <a href="{{ url('/home') }}"><img src="{{ asset('img/admin-logo.png') }}" alt="Klorofil Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div id="navbar-menu">
