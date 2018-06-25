@@ -33,4 +33,9 @@ Route::get('/category/{slug}','PostController@index')->name('category');
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/products', 'ProductController@index')->name('index');
+    Route::get('products/create', 'ProductController@create')->name('products.create');
+    Route::post('products', 'ProductController@store')->name('products.store');
+
 });

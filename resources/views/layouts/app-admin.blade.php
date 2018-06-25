@@ -64,8 +64,8 @@
             <nav>
                 <ul class="nav">
                     <li><a href="{{ url('/') }}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                    <li><a href="javascript.void(0)" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
-                    <li><a href="javascript.void(0)" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
+                    <li><a href="{{ url('/products') }}" class=""><i class="lnr lnr-code"></i> <span>Urunler</span></a></li>
+                    <li><a href="javascript:void(0)" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                     <li><a href="javascript.void(0)" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                     <li><a href="javascript.void(0)" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
                     <li>
@@ -89,7 +89,7 @@
 </div>
 
 <!-- ////  MAIN CONTENT \\\\ -->
-<div class="main">
+<div class="main" style="padding-left: 260px;">
     @yield('content')
 </div>
 <!-- ////  END OF MAIN CONTENT \\\\ -->
