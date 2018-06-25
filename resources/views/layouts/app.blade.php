@@ -62,7 +62,7 @@
 
                     <ul class="menuzord-menu menuzord-right c-nav_s-standard">
                         <li class="active"><a href="#">@lang('app-layout.home')</a></li>
-
+                        @if(isset($categories))
                         <li class=""><a href="javascript:void(0)">@lang('app-layout.categories')</a>
                             <ul class="dropdown">
                                 @foreach($categories as $category)
@@ -70,6 +70,7 @@
                                 @endforeach
                             </ul>
                         </li>
+                        @endif
 
                         <li class=""><a href="#">@lang('app-layout.about')</a></li>
 

@@ -15,7 +15,7 @@
             <!-- Wrapper for slides -->
             <div id="fullscreen-banner" class="carousel-inner fullscreen-banner" role="listbox">
                 <div class="item active">
-                    <img src="{{ asset('img/decor/banner1.jpg') }}" alt="">
+                    <img src="{{ asset('img/slide/slide3.jpg') }}" alt="">
 
                     <div class="container">
                         <div class="bs-info bs-info-right fashion-title fadeInDown animated">
@@ -26,7 +26,7 @@
 
                 </div>
                 <div class="item">
-                    <img src="{{ asset('img/decor/banner2.jpg') }}" alt="">
+                    <img src="{{ asset('img/slide/slide1.png') }}" alt="">
                     <div class="container">
                         <div class="bs-info bs-info fashion-title fadeInDown animated">
                             <h1 class="text-uppercase light-txt ">think Elegant</h1>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{ asset('img/decor/banner3.jpg') }}" alt="">
+                    <img src="{{ asset('img/slide/slide2.jpg') }}" alt="">
                     <div class="container">
                         <div class="bs-info bs-info-center fashion-title fadeInDown animated">
                             <h1 class="text-uppercase">better living</h1>
@@ -278,37 +278,24 @@
                     <!--title-->
 
 
-                    <div class="col-md-4">
-                        <h4 class="text-uppercase">sydney</h4>
+                    <div class="col-md-12 text-center">
+                        <h4 class="text-uppercase">erzincan</h4>
                         <address>
+                            @if(Config::get('app.locale') == 'ar')
                             <p>
                                 Upper Level, The Rocks, Sydney 2000 <br/>
-                                Phone: +62 500 800 123<br/>
-                                Email: testmail@yourdomain.com<br/>
-                                <a href="#" class="theme-color text-uppercase"><i class="fa fa-map-marker"></i>  view map</a>
+                                +62 500 800 123 :@lang('welcome.phone')<br/>
+                                testmail@yourdomain.com :@lang('welcome.email')<br/>
+                                <a href="#" class="theme-color text-uppercase"><i class="fa fa-map-marker"></i> @lang('welcome.viewmap')</a>
                             </p>
-                        </address>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="text-uppercase">canberra</h4>
-                        <address>
+                            @else
                             <p>
                                 Upper Level, The Rocks, Sydney 2000 <br/>
-                                Phone: +62 500 800 123<br/>
-                                Email: testmail@yourdomain.com<br/>
-                                <a href="#" class="theme-color text-uppercase"><i class="fa fa-map-marker"></i>  view map</a>
+                                @lang('welcome.phone') +62 500 800 123<br/>
+                                @lang('welcome.email') testmail@yourdomain.com<br/>
+                                <a href="#" class="theme-color text-uppercase"><i class="fa fa-map-marker"></i> @lang('welcome.viewmap')</a>
                             </p>
-                        </address>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="text-uppercase">darwin</h4>
-                        <address>
-                            <p>
-                                Upper Level, The Rocks, Sydney 2000 <br/>
-                                Phone: +62 500 800 123<br/>
-                                Email: testmail@yourdomain.com<br/>
-                                <a href="#" class="theme-color text-uppercase"><i class="fa fa-map-marker"></i>  view map</a>
-                            </p>
+                            @endif
                         </address>
                     </div>
 
