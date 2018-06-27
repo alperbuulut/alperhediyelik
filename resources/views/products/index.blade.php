@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-md-2">
-            <a href="{{ route('products.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Post</a>
+            <a href="{{ route('products.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Yeni Ürün Oluştur</a>
         </div>
         <div class="col-md-12">
             <hr>
@@ -39,7 +39,7 @@
                         <td>{{ substr($product->pdesc_tr, 0, 40) }}{{ strlen(strip_tags($product->pdesc_tr)) > 40 ? "..." : "" }}</td>
                         <td>{{ $product->img_path }}</td>
                         <td>{{ date('M j, Y', strtotime($product->created_at)) }}</td>
-                        <td><a href="" class="btn btn-default btn-sm">Goster</a> <a href="" class="btn btn-default btn-sm">Duzenle</a></td>
+                        <td><a href="{{ url('/products/show/'.$product->id) }}" class="btn btn-default btn-sm">Goster</a> <a href="{{ url('/products/'.$product->id.'/edit') }}" class="btn btn-default btn-sm">Duzenle</a></td>
                     </tr>
 
                 @endforeach
