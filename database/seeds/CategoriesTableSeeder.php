@@ -13,6 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->insert([
             'status' => 'A',
+            'img_path' => 'uploads/category-1/product-1.png',
             'tr' => 'Kolye',
             'en' => 'Necklace',
             'ar' => 'قلادة',
@@ -20,6 +21,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'status' => 'A',
+            'img_path' => 'uploads/category-1/product-1.png',
             'tr' => 'Küpe',
             'en' => 'Earring',
             'ar' => 'قرط',
@@ -27,6 +29,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'status' => 'A',
+            'img_path' => 'uploads/category-1/product-1.png',
             'tr' => 'Yüzük',
             'en' => 'Ring',
             'ar' => 'الخاتم',
@@ -34,6 +37,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'status' => 'A',
+            'img_path' => 'uploads/category-1/product-1.png',
             'tr' => 'Bilezik',
             'en' => 'Bracelet',
             'ar' => 'سوار',
@@ -41,6 +45,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'status' => 'A',
+            'img_path' => 'uploads/category-1/product-1.png',
             'tr' => 'Diğer',
             'en' => 'Other',
             'ar' => 'آخر',

@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>Yeni Kategori Oluştur</h1>
             <hr>
-            {!! Form::open(array('route' => 'categories.store', 'data-parsley-validate' => '')) !!}
+            {!! Form::open(array('route' => 'categories.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
             {{ Form::label('cname_tr', 'Isim Turkce:') }}
             {{ Form::text('cname_tr', null, array('class' => 'form-control')) }}
@@ -17,6 +17,10 @@
 
             {{ Form::label('slug', 'Slug:') }}
             {{ Form::text('slug', null, array('class' => 'form-control')) }}
+
+
+            {{ Form::label('featured_img', 'Fotoğraf Yükle') }}
+            {{ Form::file('featured_img') }}
 
             {{ Form::label('status', 'Durum:') }}
             <select class="form-control" name="status">

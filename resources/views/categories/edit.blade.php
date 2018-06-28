@@ -17,6 +17,9 @@
             {{ Form::label('slug', 'Slug:') }}
             {{ Form::text('slug', null, ["class" => 'form-control input-lg']) }}
 
+            {{ Form::label('featured_img', 'Fotoğraf Yükle') }}
+            {{ Form::file('featured_img') }}
+
             {{ Form::label('status', 'Durum:') }}
             <select class="form-control" name="status">
                 <option value='A' {{ $category->status == 'A' ? 'selected' : '' }}>Aktif</option>

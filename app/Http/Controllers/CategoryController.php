@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Image;
 
 class CategoryController extends Controller
 {
@@ -53,6 +54,18 @@ class CategoryController extends Controller
         $category->en = $request->cname_en;
         $category->ar = $request->cname_ar;
         $category->slug = $request->slug;
+
+        if ($request->hasFile('featured_img')) {
+            $image = $request->file('featured_img');
+            $filename = time() . '-' . join("_", explode(" ", strtolower($category->tr))) . '.' . $image->getClientOriginalExtension();
+            $location = '/img/categories/' . $filename;
+            Image::make($image)->resize(800, 400)->save(public_path($location));
+
+            $category->img_path = $location;
+        }   else {
+            // IF USER DID NOT ADD IMG, THIS WILL BE A DEFAULT PHOTO OF PRODUCTS
+            $category->img_path = public_path('img/product/1.jpg');
+        }
 
         $category->save();
 
@@ -121,6 +134,15 @@ class CategoryController extends Controller
         $category->ar = $request->input('ar');
         $category->slug = $request->input('slug');
         $category->status = $request->input('status');
+
+        if ($request->hasFile('featured_img')) {
+            $image = $request->file('featured_img');
+            $filename = time() . '-' . join("_", explode(" ", strtolower($category->tr))) . '.' . $image->getClientOriginalExtension();
+            $location = '/img/categories/' . $filename;
+            Image::make($image)->resize(800, 400)->save(public_path($location));
+
+            $category->img_path = $location;
+        }
 
         $category->save();
 
