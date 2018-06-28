@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-md-2">
-            <a href="{{ route('products.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Post</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Yeni Kategori</a>
         </div>
         <div class="col-md-12">
             <hr>
@@ -22,6 +22,7 @@
                 <th>#</th>
                 <th>Durum</th>
                 <th>Kategori Adı</th>
+                <th>Slug</th>
                 <th>Oluşturulma Tarihi</th>
                 </thead>
 
@@ -34,8 +35,9 @@
                         <th>{{ $category->id }}</th>
                         <td>{{ $category->status == 'A' ? 'Aktif' : 'Pasif' }}</td>
                         <td>{{ $category->tr }}</td>
+                        <td>{{ $category->slug }}</td>
                         <td>{{ date('M j, Y', strtotime($category->created_at)) }}</td>
-                        <td><a href="" class="btn btn-default btn-sm">Goster</a> <a href="" class="btn btn-default btn-sm">Duzenle</a></td>
+                        <td><a href="{{ url('categories/show/'.$category->id) }}" class="btn btn-default btn-sm">Goster</a> <a href="{{ url('categories/'.$category->id.'/edit') }}" class="btn btn-default btn-sm">Duzenle</a></td>
                     </tr>
 
                 @endforeach

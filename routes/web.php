@@ -45,8 +45,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('products', 'ProductController@store')->name('products.store');
 
     //THIS PART PROVIDES CATEGORY PROCESSES FOR AUTH USERS
-    Route::get('/categories', 'CategoryController@index')->name('category.index');
-    Route::get('categories/create', 'CategoryController@create')->name('category.create');
-    Route::post('categories', 'CategoryController@store')->name('category.store');
+    Route::get('/categories', 'CategoryController@index')->name('categories.index');
+    Route::get('/categories/show/{id}', 'CategoryController@show')->name('categories.show');
+    Route::get('/categories/{id}/edit', 'CategoryController@edit')->name('categories.edit');
+    Route::get('categories/create', 'CategoryController@create')->name('categories.create');
+    Route::put('categories/{id}', 'CategoryController@update')->name('categories.update');
+    Route::delete('categories/{id}', 'CategoryController@destroy')->name('categories.destroy');
+    Route::post('categories', 'CategoryController@store')->name('categories.store');
 
 });

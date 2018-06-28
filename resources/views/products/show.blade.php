@@ -17,6 +17,10 @@
                     <label>Fotoğraf</label><br>
                     <img src="{{ $product->img_path }}" alt="" width="300px" height="300px">
                 </dl>
+                <dl>
+                    <label>Durum:</label>
+                    {{ $product->status == 'A' ? 'Aktif' : 'Pasif' }}
+                </dl>
                 <dl class="dl-horizontal">
                     <label>Kategori:</label>
                     {{ $catname[0]->tr }}

@@ -8,12 +8,12 @@
             <hr>
             {!! Form::open(array('route' => 'products.store', 'data-parsley-validate' => '', 'files' => true)) !!}
 
-            {{ Form::label('isim_tr', 'Isim Turkce:') }}
-            {{ Form::text('isim_tr', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-            {{ Form::label('isim_en', 'Isim Ingilizce:') }}
-            {{ Form::text('isim_en', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-            {{ Form::label('isim_ar', 'Isim Arapca:') }}
-            {{ Form::text('isim_ar', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
+            {{ Form::label('pname_tr', 'Isim Turkce:') }}
+            {{ Form::text('pname_tr', null, array('class' => 'form-control')) }}
+            {{ Form::label('pname_en', 'Isim Ingilizce:') }}
+            {{ Form::text('pname_en', null, array('class' => 'form-control')) }}
+            {{ Form::label('pname_ar', 'Isim Arapca:') }}
+            {{ Form::text('pname_ar', null, array('class' => 'form-control')) }}
 
             {{ Form::label('category_id', 'Kategori:') }}
             <select class="form-control" name="category_id">
@@ -32,12 +32,12 @@
             {{ Form::label('featured_img', 'Fotoğraf Yükle') }}
             {{ Form::file('featured_img') }}
 
-            {{ Form::label('body_tr', "Aciklama Turkce:") }}
-            {{ Form::textarea('body_tr', null, array('class' => 'form-control')) }}
-            {{ Form::label('body_en', "Aciklama Ingilizce:") }}
-            {{ Form::textarea('body_en', null, array('class' => 'form-control')) }}
-            {{ Form::label('body_ar', "Aciklama Arapca:") }}
-            {{ Form::textarea('body_ar', null, array('class' => 'form-control')) }}
+            {{ Form::label('pdesc_tr', "Aciklama Turkce:") }}
+            {{ Form::textarea('pdesc_tr', null, array('class' => 'form-control')) }}
+            {{ Form::label('pdesc_en', "Aciklama Ingilizce:") }}
+            {{ Form::textarea('pdesc_en', null, array('class' => 'form-control')) }}
+            {{ Form::label('pdesc_ar', "Aciklama Arapca:") }}
+            {{ Form::textarea('pdesc_ar', null, array('class' => 'form-control')) }}
 
             {{ Form::submit('Tamamla', array('class' => 'btn btn-success btn-lg btn-block', 'style' => 'margin-top: 20px;')) }}
             {!! Form::close() !!}

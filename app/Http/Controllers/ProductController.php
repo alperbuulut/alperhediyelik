@@ -45,26 +45,26 @@ class ProductController extends Controller
 
         // validate the data
         $this->validate($request, array(
-            'isim_tr'         => 'required|max:255',
-            'isim_en'         => 'required|max:255',
-            'isim_ar'         => 'required|max:255',
+            'pname_tr'         => 'required|max:255',
+            'pname_en'         => 'required|max:255',
+            'pname_ar'         => 'required|max:255',
             'category_id'   => 'required|integer',
-            'body_tr'          => 'required|max:255',
-            'body_en'          => 'required|max:255',
-            'body_ar'          => 'required|max:255'
+            'pdesc_tr'          => 'required|max:255',
+            'pdesc_en'          => 'required|max:255',
+            'pdesc_ar'          => 'required|max:255'
         ));
 
         // store in the database
         $product = new Product;
 
-        $product->pname_tr = $request->isim_tr;
-        $product->pname_en = $request->isim_en;
-        $product->pname_ar = $request->isim_ar;
+        $product->pname_tr = $request->pname_tr;
+        $product->pname_en = $request->pname_en;
+        $product->pname_ar = $request->pname_ar;
         $product->category_id = $request->category_id;
         $product->status = $request->status;
-        $product->pdesc_tr = $request->body_tr;
-        $product->pdesc_en = $request->body_en;
-        $product->pdesc_ar = $request->body_ar;
+        $product->pdesc_tr = $request->pdesc_tr;
+        $product->pdesc_en = $request->pdesc_en;
+        $product->pdesc_ar = $request->pdesc_ar;
 
 
         if ($request->hasFile('featured_img')) {
@@ -125,7 +125,45 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate the data
+        $this->validate($request, array(
+            'pname_tr'         => 'required|max:255',
+            'pname_en'         => 'required|max:255',
+            'pname_ar'         => 'required|max:255',
+            'category_id'   => 'required|integer',
+            'pdesc_tr'          => 'required|max:255',
+            'pdesc_en'          => 'required|max:255',
+            'pdesc_ar'          => 'required|max:255'
+        ));
+
+        $product = Product::find($id);
+
+
+        $product->pname_tr = $request->input('pname_tr');
+        $product->pname_en = $request->input('pname_en');
+        $product->pname_ar = $request->input('pname_ar');
+        $product->category_id = $request->input('category_id');
+        $product->status = $request->input('status');
+        $product->pdesc_tr = $request->input('pdesc_tr');
+        $product->pdesc_en = $request->input('pdesc_en');
+        $product->pdesc_ar = $request->input('pdesc_ar');
+
+        if ($request->hasFile('featured_img')) {
+            $image = $request->file('featured_img');
+            $filename = time() . '-' . join("_", explode(" ", strtolower($product->pname_tr))) . '.' . $image->getClientOriginalExtension();
+            $location = '/img/products/' . $filename;
+            Image::make($image)->resize(800, 400)->save(public_path($location));
+
+            $product->img_path = $location;
+        }
+
+        $product->save();
+
+        // set flash data with success message
+        Session::flash('success', 'Ürün başarıyla güncellendi!');
+
+        // redirect with flash data to posts.show
+        return redirect()->route('products.index');
     }
 
     /**

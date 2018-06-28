@@ -37,7 +37,7 @@
                         <td>{{ $product->category_id }}</td>
                         <td>{{ $product->pname_tr }}</td>
                         <td>{{ substr($product->pdesc_tr, 0, 40) }}{{ strlen(strip_tags($product->pdesc_tr)) > 40 ? "..." : "" }}</td>
-                        <td>{{ $product->img_path }}</td>
+                        <td>{{ substr($product->img_path, 0, 25) }}{{ strlen(strip_tags($product->img_path)) > 25 ? "..." : "" }}</td>
                         <td>{{ date('M j, Y', strtotime($product->created_at)) }}</td>
                         <td><a href="{{ url('/products/show/'.$product->id) }}" class="btn btn-default btn-sm">Goster</a> <a href="{{ url('/products/'.$product->id.'/edit') }}" class="btn btn-default btn-sm">Duzenle</a></td>
                     </tr>
