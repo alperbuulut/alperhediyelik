@@ -19,6 +19,7 @@ class PostController extends Controller
 
     	$categories = Category::where('status', 'A')->get();
 
+
     	return view('welcome')->with('categories', $categories);
 
     }

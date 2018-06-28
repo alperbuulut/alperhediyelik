@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="metric">
-                        <span class="icon"><i class="fa fa-product-hunt"></i></span>
+                        <span class="icon"><i class="fa fa-paste"></i></span>
                         <p>
 {{--                            <span class="number">{{ mysqli_num_rows($data[0]) }}</span>--}}
                             <span class="number">{{ count($data[0]) }}</span>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="metric">
-                        <span class="icon"><i class="fas fa-shopping-bag"></i></span>
+                        <span class="icon"><i class="fa fa-align-justify"></i></span>
                         <p>
                             <span class="number">{{ count($data[1]) }}</span>
                             <span class="title">Toplam Kategori</span>

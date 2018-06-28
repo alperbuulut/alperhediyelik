@@ -22,7 +22,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="javascript.void(0)" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
+                <li><a href="{{ url('/') }}" target="_blank" class=""><i class="lnr lnr-home"></i> <span>Siteye Git</span></a></li>
             </ul>
         </nav>
     </div>

@@ -60,36 +60,14 @@
         <div class="page-content p-bot-0">
             <div class="container magazine-grid decor-category">
                 <div class="row">
-                    <div class="col-md-6">
-                        <a href="#" class="fit-img">
-                            <img src="{{ asset('img/decor/cat1.jpg') }}" alt="" />
-                            <span class="title dark">@lang('app-layout.necklace')</span>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="#" class="fit-img">
-                            <img src="{{ asset('img/decor/cat2.jpg') }}" alt="" />
-                            <span class="title light">@lang('app-layout.earring')</span>
-                        </a>
-                    </div>
+                    @foreach($categories as $category)
                     <div class="col-md-4">
                         <a href="#" class="fit-img">
                             <img src="{{ asset('img/decor/cat3.jpg') }}" alt="" />
-                            <span class="title dark">@lang('app-layout.ring')</span>
+                            <span class="title dark">{{ ${'category'}->{Config::get('app.locale')} }}</span>
                         </a>
                     </div>
-                    <div class="col-md-4">
-                        <a href="#" class="fit-img">
-                            <img src="{{ asset('img/decor/cat4.jpg') }}" alt="" />
-                            <span class="title light">@lang('app-layout.bracelet')</span>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#" class="fit-img">
-                            <img src="{{ asset('img/decor/cat5.jpg') }}" alt="" />
-                            <span class="title dark">@lang('app-layout.others')</span>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
