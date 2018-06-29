@@ -17,19 +17,20 @@
 
 Auth::routes();
 
-Route::get('/', 'PostController@index')->name('post');
+Route::get('/', 'PostController@index')->name('guest.index');
+Route::get('about', 'PostController@about')->name('guest.about');
+Route::get('contact', 'PostController@contact')->name('guest.contact');
+
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactUSPost']);
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/uploadfile','UploadFileController@index');
-Route::post('/uploadfile','UploadFileController@showUploadFile');
-
-
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
 //
-Route::get('/category/{slug}','PostController@index')->name('category');
+Route::get('/category/{slug}','PostController@indexCatBased')->name('category.show');
 
 
 Route::group(['middleware' => 'auth'], function () {

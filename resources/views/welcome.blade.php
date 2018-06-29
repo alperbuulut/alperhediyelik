@@ -60,6 +60,12 @@
         <div class="page-content p-bot-0">
             <div class="container magazine-grid decor-category">
                 <div class="row">
+                    <!--title-->
+                    <div class="heading-title border-short-bottom text-center">
+                        <h3 class="text-uppercase">@lang('welcome.categories')</h3>
+                        <div class="half-txt">@lang('welcome.categories_sub')</div>
+                    </div>
+                    <!--title-->
                     @foreach($categories as $category)
                     <div class="col-md-4">
                         <a href="#" class="fit-img">
@@ -87,101 +93,103 @@
                     <!--title-->
 
                     <div class=" portfolio-with-title col-3 gutter portfolio-gallery">
+                        @foreach($latests as $latest)
                         <div class="portfolio-item">
                             <div class="thumb">
-                                <img src="{{ asset('img/decor/port1.jpg') }}" alt="">
+                                <img src="{{ asset($latest->img_path) }}" alt="">
                                 <div class="portfolio-hover">
                                     <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port1.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
+                                        <a href="{{ asset($latest->img_path) }}" class="popup-gallery" title="{{ ${'latest'}->{'pdesc_'.Config::get('app.locale')} }}"> <i class="icon-basic_magnifier"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port1.jpg') }}" class="popup-gallery2" title="lightbox view">perspiciatis unde omnis</a></h4>
-                                <p>$39.99</p>
+                                <h4><a href="{{ asset($latest->img_path) }}" class="popup-gallery2" title="lightbox view">{{ ${'latest'}->{'pname_'.Config::get('app.locale')} }}</a></h4>
+                                <p>{{ substr(${'latest'}->{'pdesc_'.Config::get('app.locale')}, 0, 30) }}{{ strlen(strip_tags(${'latest'}->{'pdesc_'.Config::get('app.locale')})) > 30 ? "..." : "" }}</p>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/decor/port2.jpg') }}" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port2.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port2.jpg') }}" class="popup-gallery2" title="lightbox view">denouncing pleasure</a></h4>
-                                <p>$39.99</p>
-                            </div>
-                        </div>
+                        {{--<div class="portfolio-item">--}}
+                            {{--<div class="thumb">--}}
+                                {{--<img src="{{ asset('img/decor/port2.jpg') }}" alt="">--}}
+                                {{--<div class="portfolio-hover">--}}
+                                    {{--<div class="action-btn">--}}
+                                        {{--<a href="{{ asset('img/decor/port2.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="portfolio-title text-center">--}}
+                                {{--<h4><a href="{{ asset('img/decor/port2.jpg') }}" class="popup-gallery2" title="lightbox view">denouncing pleasure</a></h4>--}}
+                                {{--<p>$39.99</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/decor/port3.jpg') }}" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port3.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port3.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>
-                                <p>$39.99</p>
-                            </div>
-                        </div>
+                        {{--<div class="portfolio-item">--}}
+                            {{--<div class="thumb">--}}
+                                {{--<img src="{{ asset('img/decor/port3.jpg') }}" alt="">--}}
+                                {{--<div class="portfolio-hover">--}}
+                                    {{--<div class="action-btn">--}}
+                                        {{--<a href="{{ asset('img/decor/port3.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="portfolio-title text-center">--}}
+                                {{--<h4><a href="{{ asset('img/decor/port3.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>--}}
+                                {{--<p>$39.99</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/decor/port4.jpg') }}" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port4.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port4.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>
-                                <p>$39.99</p>
-                            </div>
-                        </div>
+                        {{--<div class="portfolio-item">--}}
+                            {{--<div class="thumb">--}}
+                                {{--<img src="{{ asset('img/decor/port4.jpg') }}" alt="">--}}
+                                {{--<div class="portfolio-hover">--}}
+                                    {{--<div class="action-btn">--}}
+                                        {{--<a href="{{ asset('img/decor/port4.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="portfolio-title text-center">--}}
+                                {{--<h4><a href="{{ asset('img/decor/port4.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>--}}
+                                {{--<p>$39.99</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/decor/port5.jpg') }}" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port5.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port5.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>
-                                <p>$39.99</p>
-                            </div>
-                        </div>
+                        {{--<div class="portfolio-item">--}}
+                            {{--<div class="thumb">--}}
+                                {{--<img src="{{ asset('img/decor/port5.jpg') }}" alt="">--}}
+                                {{--<div class="portfolio-hover">--}}
+                                    {{--<div class="action-btn">--}}
+                                        {{--<a href="{{ asset('img/decor/port5.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="portfolio-title text-center">--}}
+                                {{--<h4><a href="{{ asset('img/decor/port5.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>--}}
+                                {{--<p>$39.99</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <div class="portfolio-item">
-                            <div class="thumb">
-                                <img src="{{ asset('img/decor/port6.jpg') }}" alt="">
-                                <div class="portfolio-hover">
-                                    <div class="action-btn">
-                                        <a href="{{ asset('img/decor/port6.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-title text-center">
-                                <h4><a href="{{ asset('img/decor/port6.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>
-                                <p>$39.99</p>
-                            </div>
-                        </div>
+                        {{--<div class="portfolio-item">--}}
+                            {{--<div class="thumb">--}}
+                                {{--<img src="{{ asset('img/decor/port6.jpg') }}" alt="">--}}
+                                {{--<div class="portfolio-hover">--}}
+                                    {{--<div class="action-btn">--}}
+                                        {{--<a href="{{ asset('img/decor/port6.jpg') }}" class="popup-gallery" title="lightbox view"> <i class="icon-basic_magnifier"></i>--}}
+                                        {{--</a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="portfolio-title text-center">--}}
+                                {{--<h4><a href="{{ asset('img/decor/port6.jpg') }}" class="popup-gallery2" title="lightbox view">annoyances accepted</a></h4>--}}
+                                {{--<p>$39.99</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                     </div>
 

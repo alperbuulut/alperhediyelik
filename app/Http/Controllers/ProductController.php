@@ -71,7 +71,7 @@ class ProductController extends Controller
             $image = $request->file('featured_img');
             $filename = time() . '-' . join("_", explode(" ", strtolower($product->pname_tr))) . '.' . $image->getClientOriginalExtension();
             $location = '/img/products/' . $filename;
-            Image::make($image)->resize(800, 400)->save(public_path($location));
+            Image::make($image)->resize(800, 600)->save(public_path($location));
 
             $product->img_path = $location;
         }   else {
@@ -152,7 +152,7 @@ class ProductController extends Controller
             $image = $request->file('featured_img');
             $filename = time() . '-' . join("_", explode(" ", strtolower($product->pname_tr))) . '.' . $image->getClientOriginalExtension();
             $location = '/img/products/' . $filename;
-            Image::make($image)->resize(800, 400)->save(public_path($location));
+            Image::make($image)->resize(800, 600)->save(public_path($location));
 
             $product->img_path = $location;
         }

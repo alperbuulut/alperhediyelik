@@ -17,25 +17,25 @@
 
                     <!--logo start-->
                     <a href="{{ url('/') }}" class="logo-brand">
-                        <img class="retina" src="{{ asset('img/logo-main3.png') }}" alt="Massive">
+                        <img class="retina" src="{{ asset('img/logo-main3.png') }}" alt="alperhediyelik">
                     </a>
                     <!--logo end-->
 
                     <ul class="menuzord-menu menuzord-right c-nav_s-standard">
-                        <li class="active"><a href="#">@lang('app-layout.home')</a></li>
+                        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="{{ url('/') }}">@lang('app-layout.home')</a></li>
                         @if(isset($categories))
-                            <li class=""><a href="javascript:void(0)">@lang('app-layout.categories')</a>
+                            <li class="{{ Request::is('category/necklace', 'category/earring', 'category/ring', 'category/bracelet', 'category/other', 'category/lamp') ? "active" : "" }}"><a href="javascript:void(0)">@lang('app-layout.categories')</a>
                                 <ul class="dropdown">
                                     @foreach($categories as $category)
-                                        <li><a href="{{ route('category', $category->slug) }}">{{ ${'category'}->{Config::get('app.locale')}  }}</a></li>
+                                        <li><a href="{{ route('category.show', $category->slug) }}">{{ ${'category'}->{Config::get('app.locale')}  }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
                         @endif
 
-                        <li class=""><a href="#">@lang('app-layout.about')</a></li>
+                        <li class="{{ Request::is('about') ? "active" : "" }}"><a href="{{ url('about') }}">@lang('app-layout.about')</a></li>
 
-                        <li class=""><a href="#">@lang('app-layout.contact')</a></li>
+                        <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="{{ url('contact') }}">@lang('app-layout.contact')</a></li>
 
                         <li class="">
                             <a href="javascript:void(0)" data-toggle="dropdown">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Session;
@@ -18,75 +19,45 @@ class PostController extends Controller
     {
 
     	$categories = Category::where('status', 'A')->get();
+    	$latests = Product::latest()->take(6)->get();
 
 
-    	return view('welcome')->with('categories', $categories);
+    	return view('welcome')->with('categories', $categories)->with('latests', $latests);
 
     }
-
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function indexCatBased($slug)
     {
-        //
-    }
 
+        $categories = Category::where('status', 'A')->get();
+        $category = Category::where('slug', $slug)->get();
+        $products = Product::where('category_id', $category[0]->id)->get();
+
+    	return view('guest.show')->withProducts($products)->withCategory($category[0])->withCategories($categories);
+
+    }
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function about()
     {
-        //
+        $categories = Category::where('status', 'A')->get();
+        return view('guest.about')->withCategories($categories);
     }
-
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function contact()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $categories = Category::where('status', 'A')->get();
+        return view('guest.contact')->withCategories($categories);
     }
 }

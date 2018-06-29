@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Image;
@@ -162,10 +163,14 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+        $relatedProducts = Product::where('category_id', $id)->get();
 
         $category->delete();
+        foreach ($relatedProducts as $product) {
+            $product->delete();
+        }
 
-        Session::flash('success', 'Kategori başarıyla kaldırıldı!');
+        Session::flash('success', 'Kategori ve bu kategorideki ürünler başarıyla kaldırıldı!');
         return redirect()->route('categories.index');
     }
 }
